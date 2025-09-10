@@ -268,7 +268,7 @@
   <div class="branding py-4">
     <div class="container text-center">
       <a href="{{ route('home') }}" class="d-inline-block" title="Ir al inicio">
-        <img src="{{ asset('img/logo.jpg') }}" 
+        <img src="{{ asset('img/logo/logo_colegio.jpg') }}" 
              alt=" - Logo institucional"
              loading="lazy">
       </a>
