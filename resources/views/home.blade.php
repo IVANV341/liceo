@@ -387,7 +387,8 @@
         <div class="map-container">
           {{-- AQUÍ VA TU MAPA DE GOOGLE MAPS --}}
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.123456789!2d-73.123456!3d7.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCalle%2044%20%2327-50%2C%20Bucaramanga!5e0!3m2!1ses!2sco!4v1234567890"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.6074071694798!2d-73.85311072413279!3d7.
+            055331392947047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e42ecae353d014d%3A0x1d5af489dbdf9cf5!2sLiceo%20Bilingue%20Rodolfo%20R.%20Llinas!5e0!3m2!1ses-419!2sco!4v1757465928964!5m2!1ses-419!2sco"
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
