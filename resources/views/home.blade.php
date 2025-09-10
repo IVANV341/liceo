@@ -228,7 +228,7 @@
       
       {{-- Slide 2 --}}
       <div class="carousel-item">
-        <img src="{{ asset('img/carousel/slide2.jpg') }}" alt="Estudiantes en actividades académicas">
+        <img src="{{ asset('img/carousel/slide2.png') }}" alt="Estudiantes en actividades académicas">
         <div class="carousel-caption">
           <h1>Educación Bilingüe de Calidad</h1>
           <p class="lead">Desde guardería hasta educación media con metodología innovadora</p>
@@ -243,7 +243,7 @@
       
       {{-- Slide 3 --}}
       <div class="carousel-item">
-        <img src="{{ asset('img/carousel/slide3.jpg') }}" alt="Actividades deportivas y culturales">
+        <img src="{{ asset('img/carousel/slide3.png') }}" alt="Actividades deportivas y culturales">
         <div class="carousel-caption">
           <h1>Formación Integral</h1>
           <p class="lead">Desarrollamos todas las dimensiones de nuestros estudiantes</p>
@@ -256,6 +256,8 @@
         </div>
       </div>
     </div>
+
+    
     
     <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon"></span>
