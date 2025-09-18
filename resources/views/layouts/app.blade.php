@@ -363,12 +363,7 @@
               <i class="bi bi-images me-1"></i>Galería
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('publicaciones') ? 'active' : '' }}" 
-               href="{{ route('publicaciones') }}">
-              <i class="bi bi-file-earmark-text me-1"></i>Publicaciones
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('contacto') ? 'active' : '' }}" 
                href="{{ route('contacto') }}">

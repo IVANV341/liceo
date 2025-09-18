@@ -13,13 +13,22 @@
   
   .hero-carousel .carousel-item {
     position: relative;
+    height: 500px; /* Altura fija para desktop */
+    overflow: hidden;
   }
   
   .hero-carousel .carousel-item img {
-    height: 500px;
     width: 100%;
-    object-fit: cover;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen manteniendo proporción */
+    object-position: center center; /* Centra la imagen */
     filter: brightness(0.7);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover effect opcional */
+  .hero-carousel .carousel-item:hover img {
+    transform: scale(1.05);
   }
   
   .hero-carousel .carousel-caption {
@@ -171,9 +180,10 @@
     font-size: 1.2rem;
   }
   
+  /* Responsive para móviles */
   @media (max-width: 768px) {
-    .hero-carousel .carousel-item img {
-      height: 350px;
+    .hero-carousel .carousel-item {
+      height: 350px; /* Altura más pequeña en móviles */
     }
     
     .hero-carousel .carousel-caption h1 {
@@ -194,6 +204,12 @@
     
     .biography-section .content-area {
       padding: 2rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero-carousel .carousel-item {
+      height: 280px; /* Aún más pequeña en móviles pequeños */
     }
   }
 </style>
@@ -269,6 +285,156 @@
     </button>
   </div>
 </section>
+
+{{-- SECCIÓN VIDEO DE BIENVENIDA --}}
+<section style="padding: 6rem 0; background: linear-gradient(135deg, #1e293b 0%, #334155 100%);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="text-center mb-5">
+          <h2 style="color: white; font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">
+            🎬 Conoce Nuestro Liceo
+          </h2>
+          <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+            Un recorrido por nuestras instalaciones, metodología y la experiencia educativa 
+            que ofrecemos a nuestros estudiantes.
+          </p>
+        </div>
+        
+        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3); background: #000;">
+          {{-- VIDEO EMBED --}}
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+            <video 
+              controls 
+              preload="metadata"
+              poster="{{ asset('img/video/video-poster.jpg') }}"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px;"
+            >
+              <source src="{{ asset('video/bienvenida-liceo.mp4') }}" type="video/mp4">
+              <source src="{{ asset('video/bienvenida-liceo.webm') }}" type="video/webm">
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
+          
+          {{-- OVERLAY CON INFORMACIÓN --}}
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; padding: 2rem 1.5rem 1.5rem;">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <h5 style="font-weight: 700; margin-bottom: 0.5rem;">Video Institucional 2025</h5>
+                <p style="margin-bottom: 0; opacity: 0.9; font-size: 0.95rem;">
+                  Duración: 1:04 min | Conoce nuestras instalaciones y metodología
+                </p>
+              </div>
+              <div class="col-md-4 text-md-end mt-2 mt-md-0">
+                <button class="btn btn-outline-light btn-sm" onclick="toggleFullscreen()">
+                  <i class="bi bi-arrows-fullscreen me-1"></i>
+                  Pantalla completa
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {{-- ESTADÍSTICAS DEL VIDEO --}}
+        <div class="row g-4 mt-4">
+          <div class="col-md-3 col-6">
+            <div class="text-center" style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; backdrop-filter: blur(10px);">
+              <i class="bi bi-building" style="font-size: 2rem; color: #fbbf24; margin-bottom: 0.5rem;"></i>
+              <h6 style="color: white; font-weight: 700; margin-bottom: 0.25rem;">Instalaciones</h6>
+              <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0;">Modernas y seguras</p>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-6">
+            <div class="text-center" style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; backdrop-filter: blur(10px);">
+              <i class="bi bi-people" style="font-size: 2rem; color: #10b981; margin-bottom: 0.5rem;"></i>
+              <h6 style="color: white; font-weight: 700; margin-bottom: 0.25rem;">Comunidad</h6>
+              <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0;">Estudiantes y familias</p>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-6">
+            <div class="text-center" style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; backdrop-filter: blur(10px);">
+              <i class="bi bi-award" style="font-size: 2rem; color: #8b5cf6; margin-bottom: 0.5rem;"></i>
+              <h6 style="color: white; font-weight: 700; margin-bottom: 0.25rem;">Metodología</h6>
+              <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0;">Innovadora y efectiva</p>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-6">
+            <div class="text-center" style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; backdrop-filter: blur(10px);">
+              <i class="bi bi-globe" style="font-size: 2rem; color: #ef4444; margin-bottom: 0.5rem;"></i>
+              <h6 style="color: white; font-weight: 700; margin-bottom: 0.25rem;">Bilingüe</h6>
+              <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0;">Español e inglés</p>
+            </div>
+          </div>
+        </div>
+        
+        {{-- BOTONES DE ACCIÓN --}}
+        <div class="text-center mt-5">
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="{{ route('admisiones') }}" class="btn btn-light btn-lg" style="border-radius: 25px;">
+              <i class="bi bi-pencil-square me-2"></i>
+              Proceso de Admisiones
+            </a>
+            <a href="{{ route('colegio') }}" class="btn btn-outline-light btn-lg" style="border-radius: 25px;">
+              <i class="bi bi-info-circle me-2"></i>
+              Conoce Más Sobre Nosotros
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{-- JAVASCRIPT PARA EL VIDEO --}}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.querySelector('video');
+  
+  // Función para pantalla completa
+  window.toggleFullscreen = function() {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) {
+      video.msRequestFullscreen();
+    }
+  };
+  
+  // Tracking de reproducción (opcional)
+  video.addEventListener('play', function() {
+    console.log('Video de bienvenida iniciado');
+    // Aquí puedes agregar Google Analytics o tracking
+  });
+  
+  video.addEventListener('ended', function() {
+    console.log('Video de bienvenida completado');
+    // Aquí puedes agregar tracking de conversión
+  });
+  
+  // Lazy loading del video para mejor performance
+  const observerOptions = {
+    threshold: 0.25
+  };
+  
+  const videoObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Precargar el video cuando esté visible
+        video.load();
+        videoObserver.unobserve(video);
+      }
+    });
+  }, observerOptions);
+  
+  videoObserver.observe(video);
+});
+</script>
+
+
 
 {{-- SECCIÓN BIENVENIDOS --}}
 <section class="welcome-section">
