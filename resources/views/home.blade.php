@@ -307,7 +307,7 @@
             <video 
               controls 
               preload="metadata"
-              poster="{{ asset('img/video/video-poster.jpg') }}"
+              poster="{{ asset('video/video-poster.jpg') }}"
               style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px;"
             >
               <source src="{{ asset('video/bienvenida-liceo.mp4') }}" type="video/mp4">
